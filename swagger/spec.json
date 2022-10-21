@@ -1,0 +1,35 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Typescript Rest Archetype",
+        "description": "Documentação da API",
+        "version": "1.0.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/example/get": {
+            "get": {
+                "summary": "Realiza uma pesquisa de acordo com o search informado.",
+                "tags": ["search"],
+                
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "search",
+                        "required": true,
+                        "type": "string",
+                        "example": "exampleSearch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorno da pesquisa"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
