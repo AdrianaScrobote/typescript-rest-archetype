@@ -6,6 +6,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger/spec.json';
 
 const app = express();
+app.use(express.json());
 
 const config = appConfig();
 app.locals.config = config;

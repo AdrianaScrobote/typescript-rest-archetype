@@ -2,4 +2,9 @@ import { Router } from 'express';
 import healthCheckRouter from './healthCheck';
 import routerExample from './routerExample';
 
-export default Router().use(healthCheckRouter).use(routerExample);
+const router = Router();
+
+router.use(healthCheckRouter);
+router.use(routerExample);
+
+export default router;

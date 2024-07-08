@@ -9,7 +9,7 @@
     "paths": {
         "/example/get": {
             "get": {
-                "summary": "Realiza uma pesquisa de acordo com o search informado.",
+                "summary": "Realiza uma requisição GET.",
                 "tags": ["search"],
                 
                 "parameters": [
@@ -24,6 +24,40 @@
                 "responses": {
                     "200": {
                         "description": "Retorno da pesquisa"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/example/post": {
+            "post": {
+                "summary": "Realiza uma requisição POST.",
+                "tags": ["sale"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "test": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "test": "testando"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Venda criada"
+                    },
+                    "400": {
+                        "description": "Bad request"
                     },
                     "500": {
                         "description": "Internal server error"
